@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -17,88 +18,359 @@
     <link rel="stylesheet" href="../assets/css/demo_2/style.css" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../assets/images/favicon.png" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    .tdnew {
+        line-height: 2 !important
+    }
+    .skico i{
+        font-size: 30px  !important;
+        color: forestgreen;
+    }
+
+    .tile {
+        width: 80%;
+        margin: 60px auto;
+    }
+
+    #tile-1 .tab-pane {
+        padding: 15px;
+        height: 80px;
+    }
+
+    #tile-1 .nav-tabs {
+        position: relative;
+        border: none !important;
+        background-color: #fff;
+        /*   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); */
+        border-radius: 6px;
+    }
+
+    #tile-1 .nav-tabs li {
+        margin: 0px !important;
+    }
+
+    #tile-1 .nav-tabs li a {
+        position: relative;
+        margin-right: 0px !important;
+        padding: 20px 40px !important;
+        font-size: 16px;
+        border: none !important;
+        color: #333;
+    }
+
+    #tile-1 .nav-tabs a:hover {
+        background-color: #fff !important;
+        border: none;
+    }
+
+    #tile-1 .slider {
+        display: inline-block;
+        width: 30px;
+        height: 4px;
+        border-radius: 3px;
+        background-color: #39bcd3;
+        position: absolute;
+        z-index: 1200;
+        bottom: 0;
+        transition: all .4s linear;
+
+    }
+
+    #tile-1 .nav-tabs .active {
+        background-color: transparent !important;
+        border: none !important;
+        color: #39bcd3 !important;
+    }
+</style>
+
+<body>
     <div class="container-scroller">
-      <!-- partial:partials/_horizontal-navbar.html -->
-      <div class="horizontal-menu">
-        <nav class="navbar top-navbar col-lg-12 col-12 p-0">
-          <div class="container">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-              <a class="navbar-brand brand-logo" href="index.html">
-                <img src="../assets/images/logo.svg" alt="logo" />
-                <span class="font-12 d-block font-weight-light">Responsive Dashboard </span>
-              </a>
-              <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
+        <!-- partial:partials/_horizontal-navbar.html -->
+        <div class="horizontal-menu">
+            <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+                <div class="container">
+                    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                        <a class="navbar-brand brand-logo" href="index.html">
+                            <img src="../assets/images/logo.svg" alt="logo" />
+                            <span class="font-12 d-block font-weight-light">Responsive Dashboard </span>
+                        </a>
+                        <a class="navbar-brand brand-logo-mini" href="index.html"><img
+                                src="../assets/images/logo-mini.svg" alt="logo" /></a>
+                    </div>
+                    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                        <ul class="navbar-nav mr-lg-2">
+                            <li class="nav-item nav-search d-none d-lg-block">
+                                <div class="input-group">
+                                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                        <span class="input-group-text" id="search">
+                                            <i class="mdi mdi-magnify"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="navbar-search-input"
+                                        placeholder="Search" aria-label="search" aria-describedby="search" />
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item nav-profile dropdown">
+                                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <div class="nav-profile-img">
+                                        <img src="../assets/images/faces/face1.jpg" alt="image" />
+                                    </div>
+                                    <div class="nav-profile-text">
+                                        <p class="text-black font-weight-semibold m-0"> Saranya G</p>
+                                        <span class="font-13 online-color">online <i
+                                                class="mdi mdi-chevron-down"></i></span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                            data-toggle="horizontal-menu-toggle">
+                            <span class="mdi mdi-menu"></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar">
+                <div class="container">
+                    <ul class="nav page-navigation">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <i class="mdi mdi-compass-outline menu-icon"></i>
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <i class="mdi mdi-compass-outline menu-icon"></i>
+                                <span class="menu-title">About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">
+                                <i class="mdi mdi-compass-outline menu-icon"></i>
+                                <span class="menu-title">Portfolio</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="../screenshot-vertical.jpg" alt="s" class="w-100">
+                </div>
+                <div class="col-lg-6">
+                    <div class="my-details">
+                        <div class="tile" id="tile-1">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-justified" role="tablist">
+                                <div class="slider"></div>
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true"><i class="fas fa-home"></i>
+                                        Education</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                        aria-controls="profile" aria-selected="false"><i class="fas fa-id-card"></i>
+                                        skills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                                        aria-controls="contact" aria-selected="false"><i class="fas fa-map-signs"></i>
+                                        Contact</a>
+                                </li>
+
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title text-center">Details</h4>
+
+                                            <div class="table-responsive">
+                                                <table class="table ">
+                                                    <thead>
+                                                        <tr style="background-color: #c086aa;">
+                                                            <th class="font-weight-bold">#</th>
+                                                            <th class="font-weight-bold">Name</th>
+                                                            <th class="font-weight-bold">Year</th>
+                                                            <th class="font-weight-bold">Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="table-warning">
+                                                            <td class="tdnew">1</td>
+                                                            <td class="tdnew">Vivekananda Institute of <br>Information
+                                                                and Management <br>Studies</td>
+                                                            <td class="tdnew">2023</td>
+                                                            <td class="tdnew">
+                                                                <label class="badge badge-success">Completed</label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="table-info">
+                                                            <td class="tdnew">2</td>
+                                                            <td class="tdnew">Muthayammal College of <br> Arts and
+                                                                Science</td>
+
+                                                            <td class="tdnew">2020</td>
+                                                            <td class="tdnew">
+                                                                <label class="badge badge-warning">Completed</label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="table-primary">
+
+                                                            <td class="tdnew">3</td>
+                                                            <td class="tdnew">Govt Girls Higher <br>Secondary School
+                                                            </td>
+
+                                                            <td class="tdnew">2017</td>
+                                                            <td class="tdnew">
+                                                                <label class="badge badge-danger">Completed</label>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Skills</h4>
+                                            <div class="row">
+
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-solid fa-c"></i>
+                                                      </div>
+                                                        <h5>C++</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-brands fa-python"></i>
+                                                      </div>
+                                                        <h5>Python</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-brands fa-php"></i>
+                                                      </div>
+                                                        <h5>PHP</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-brands fa-html5"></i>
+                                                      </div>
+                                                        <h5>HTML</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+                                                        
+                                                        <i class="fa-brands fa-css3-alt"></i>
+                                                      </div>
+                                                        <h5>CSS</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-brands fa-bootstrap"></i>
+                                                        </div>
+
+                                                        <h5>Bootstrap</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-solid fa-database"></i>
+                                                      </div>
+                                                        <h5>SQL</h5>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="skill-item bg-light p-3 mb-3 text-center rounded">
+                                                      <div class="skico ">
+
+                                                        <i class="fa-brands fa-js"></div></i>
+                                                        <h5>JQuery</h5>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    Contact</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                        <h5>Skills</h5>
+                        <p>Details about your skills.</p>
+                    </div>
+                    <div class="tab-pane fade" id="personal-details" role="tabpanel"
+                        aria-labelledby="personal-details-tab">
+                        <h5>Personal Details</h5>
+                        <p>Details about your personal information.</p>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-              <ul class="navbar-nav mr-lg-2">
-                <li class="nav-item nav-search d-none d-lg-block">
-                  <div class="input-group">
-                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                      <span class="input-group-text" id="search">
-                        <i class="mdi mdi-magnify"></i>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" id="navbar-search-input" placeholder="Search" aria-label="search" aria-describedby="search" />
-                  </div>
-                </li>
-              </ul>
-              <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item nav-profile dropdown">
-                  <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <div class="nav-profile-img">
-                      <img src="../assets/images/faces/face1.jpg" alt="image" />
-                    </div>
-                    <div class="nav-profile-text">
-                      <p class="text-black font-weight-semibold m-0"> Olson jass </p>
-                      <span class="font-13 online-color">online <i class="mdi mdi-chevron-down"></i></span>
-                    </div>
-                  </a>
-                  <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
-                      <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
-                  </div>
-                </li>
-              </ul>
-              <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
-                <span class="mdi mdi-menu"></span>
-              </button>
-            </div>
-          </div>
-        </nav>
-        <nav class="bottom-navbar">
-          <div class="container">
-            <ul class="nav page-navigation">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                  <i class="mdi mdi-compass-outline menu-icon"></i>
-                  <span class="menu-title">Dashboard</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">
-                  <i class="mdi mdi-compass-outline menu-icon"></i>
-                  <span class="menu-title">About</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="portfolio.html">
-                  <i class="mdi mdi-compass-outline menu-icon"></i>
-                  <span class="menu-title">Portfolio</span>
-                </a>
-              </li>
-       
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <!-- partial -->
-   
-      <!-- page-body-wrapper ends -->
+        </div>
+    </div>
+    </div>
+    <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -106,7 +378,8 @@
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <script src="../assets/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
-  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
     <script src="../assets/vendors/flot/jquery.flot.js"></script>
     <script src="../assets/vendors/flot/jquery.flot.resize.js"></script>
     <script src="../assets/vendors/flot/jquery.flot.categories.js"></script>
@@ -121,7 +394,24 @@
     <script src="../assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="../assets/js/dashboard.js"></script> 
+    <script src="../assets/js/dashboard.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("#tile-1 .nav-tabs a").click(function () {
+                var position = $(this).parent().position();
+                var width = $(this).parent().width();
+                $("#tile-1 .slider").css({ "left": + position.left, "width": width });
+            });
+            var actWidth = $("#tile-1 .nav-tabs").find(".active").parent("li").width();
+            var actPosition = $("#tile-1 .nav-tabs .active").position();
+            $("#tile-1 .slider").css({ "left": + actPosition.left, "width": actWidth });
+        })
+
+    </script>
     <!-- End custom js for this page -->
-  </body>
+</body>
+
 </html>
